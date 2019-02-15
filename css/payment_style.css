@@ -1,0 +1,17 @@
+.test{
+	border-color: blue;
+	border-style: solid;
+}
+
+#data_step_two{
+	display: none;
+}
+
+
+.cursorP{
+	cursor: pointer;
+}
+
+.centrarthing{
+	text-align: center;
+}
