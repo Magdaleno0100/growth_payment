@@ -2,16 +2,32 @@
 	border-color: blue;
 	border-style: solid;
 }
-
 #data_step_two{
 	display: none;
 }
-
-
 .cursorP{
 	cursor: pointer;
 }
-
 .centrarthing{
 	text-align: center;
+}
+.tamtwelve{
+	font-size: 12px;
+}
+.margtop{
+	margin-top: 8%;
+}
+.forma_img{
+	width: 300px;
+	height: 40px;
+}
+.separeSection{
+	margin-top: 2%;
+}
+.forma_img_ssl{
+	width: 90px;
+	height: 50px;
+}
+#resultado{
+	color: red;
 }

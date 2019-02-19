@@ -8,6 +8,7 @@ class ViewPrincipal{
 	public $ruta_js = "js".DIRECTORY_SEPARATOR;
 	public $archivos_css;
 	public $archivos_js;
+	public $version;
 
 
 
@@ -18,11 +19,14 @@ class ViewPrincipal{
 		$this->subtitulo = $subtitulo;
 		$this->archivos_js = $archivos_js;
 		$this->archivos_css = $archivos_css;
+		$this->version  = rand(0, 100000).rand(0, 200000);
 
 		
 	}
 
 	public function createHead(){
+
+
 
 		$data_html  = '<!DOCTYPE html>' . "\r\n";
 		$data_html .= '<html>' . "\r\n";
@@ -34,7 +38,7 @@ class ViewPrincipal{
 
 		  if (count($this->archivos_css) > 0) {
 		  	foreach ($this->archivos_css as $archivo) {
-		  		$data_html .= '<link rel="stylesheet" href="'.$this->ruta_css.$archivo.'.css">';
+		  		$data_html .= '<link rel="stylesheet" href="'.$this->ruta_css.$archivo.'.css?v='.$this->version.'">';
 		  		$data_html .= "\r\n";
 		  	}	
 		  }
@@ -65,7 +69,7 @@ class ViewPrincipal{
 		$data_html  .= '</footer>' . "\r\n";
 		if (count($this->archivos_js) > 0) {
 		  	foreach ($this->archivos_js as $archivo) {
-		  		$data_html .= '<script src="'.$this->ruta_js.$archivo.'.js"></script>';
+		  		$data_html .= '<script src="'.$this->ruta_js.$archivo.'.js?v='.$this->version.'"></script>';
 		  		$data_html .= "\r\n";
 		  	}	
 		  }
