@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 });//end Document ready
 
-function chechForm(){
+function chechFormOne(){
 
 	var fname = $("#fName").val();
 	var lname = $("#lName").val();
@@ -49,6 +49,9 @@ function chechForm(){
 	}else if(isNaN(phone)) {
   		mensaje = "Check the phone number!";
   		es_valido = false;
+	}else if(phone == "") {
+  		mensaje = "Check the phone number!";
+  		es_valido = false;
 	}else if (company == "") {
 		mensaje = "Without Company Name!";
 		es_valido = false;
@@ -63,30 +66,67 @@ function chechForm(){
 
 
 	if (es_valido) {
-
-		$.ajax({
-		url: '/core/Init_Controller.php',
-		type: 'post',
-		data:{'Clase':'Billing_Service','Metodo':'get_billing_slopes','Variables':SP_Arguments},
-		dataType: 'html',
-		success:function(data){
-			msj.html("");
-		Results_Container.html(data);
-		}
-
-		});
-
-
-		$("#resultado").html("<span></span>");
-
+		return 1;
 	}else{
-		$("#resultado").html("<span>***"+mensaje+"***</span>");
+
+		return mensaje;
+		//$("#resultado").html("<span>***"+mensaje+"***</span>");
 	}
 
 
-
-
-
-
 }//end chechForm()
+
+function chechFormTwo(){
+
+}
+
+
+function stepOne(){
+
+	verificardor = chechFormOne();
+
+	if (verificardor == 1) {
+		$("#data_step_one").hide();
+		$("#data_step_two").show();
+	}else{
+		$("#resultado").html("<span>***"+verificardor+"***</span>");
+	}
+
+}
+
+
+function stepTwo(){
+
+	verificardor = chechFormTwo();
+
+	if (verificardor == 1) {
+		//SentPayment();
+		alert(verificardor);
+	}else{
+		$("#resultado").html("<span>***"+verificardor+"***</span>");
+	}
+
+}
+
+function SentPayment(){
+
+	verificardor_one = chechFormOne();
+	verificardor_two = chechFormTwo();
+
+	if (verificardor_one == 1 && verificardor_two == 1) {
+
+	var fname = $("#fName").val();
+	var lname = $("#lName").val();
+	var email = $("#email").val();
+	var phone = $("#pNumber").val();
+	var company = $("#cName").val();
+
+
+
+	}
+
+}
+
+
+
 

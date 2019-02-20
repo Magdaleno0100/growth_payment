@@ -1,0 +1,24 @@
+CREATE DATABASE growthDB;
+USE growthDB;
+
+
+CREATE TABLE tblOrder(
+idOrder INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL COMMENT "Primary key", 
+FnameOrder VARCHAR(40) NOT NULL COMMENT "First name customer", 
+LnameOrder VARCHAR(40) NOT NULL COMMENT "Last name customer", 
+emailOrder VARCHAR(50) NOT NULL COMMENT "email customer", 
+phoneOrder VARCHAR(20) NOT NULL COMMENT "Phone number Customer", 
+comoanyOrder VARCHAR(40) NOT NULL COMMENT "Company name", 
+numberCartOrder VARCHAR(100) NOT NULL COMMENT "NumberCartOrder", 
+dateCart DATE NOT NULL COMMENT "Expirataion date Card", 
+cvcOrder VARCHAR(100) NOT NULL COMMENT "CVC card", 
+countOrder INT(11)  NOT NULL COMMENT "Total",
+productoOrder INT(11) NOT NULL COMMENT "Simula el id del producto GGI Master Class como llave foranea");
+
+
+
+
+
+CREATE USER 'growtuser'@'localhost' IDENTIFIED BY 'growtpass';
+GRANT DELETE, INSERT, SELECT, UPDATE ON growthDB.* TO 'growtuser'@'localhost';
+FLUSH PRIVILEGES;

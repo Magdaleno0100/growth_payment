@@ -1,6 +1,5 @@
 <?php 
 
-
 class ClassController{
 	public $clase;
 	public $metodo;
@@ -17,10 +16,9 @@ class ClassController{
 
 	private function Instanciador(){
 
-		$Instancia = new $this->clase($this->variables);
+		$Instancia = new $this->clase();
 		$metodo = $this->metodo;
-		$Instancia->$metodo();
-
+		$Instancia->$metodo($this->variables);
 	}
 
 

@@ -79,7 +79,7 @@ $UI->createBody();
 
 
   				<div class="centrarthing">
-  					<button class="btn btn-primary" type="button" onclick="chechForm()">Siguente</button>
+  					<button class="btn btn-primary" type="button" onclick="stepOne()">Siguente</button>
   				</div>
 
 			</div>
@@ -87,10 +87,24 @@ $UI->createBody();
 			<div id="data_step_two">
 
 				<div class="form-group">
-    				<label for="inputAddress">Credit Card</label>
-    				<input type="text" class="form-control" id="inputAddress">
-  				</div>
+    				<label>Credit Card</label>
 
+    			<div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">Card Number</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">MM/AA</label>
+                  <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">CVC</label>
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+  			</div>
 			</div>
 
 		</div>
@@ -119,6 +133,10 @@ d-none d-sm-block
 -->
 <?php 
 	$UI->createFooter();
+
+ //echo dirname(__FILE__);
+
+
 ?>
 
 
